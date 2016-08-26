@@ -6,22 +6,22 @@ HERE = os.path.dirname(__file__)
 
 
 def list_view(request):
-    imported_text = open(os.path.join(HERE, '/templates/index.html')).read()
+    imported_text = open(os.path.join(HERE, './templates/index.html')).read()
     return Response(imported_text)
 
 
 def detail_view(request):
-    imported_text = open(os.path.join(HERE, '/templates/detail.html')).read()
+    imported_text = open(os.path.join(HERE, './templates/detail.html')).read()
     return Response(imported_text)
 
 
 def entry_view(request):
-    imported_text = open(os.path.join(HERE, '/templates/entry.html')).read()
+    imported_text = open(os.path.join(HERE, './templates/entry.html')).read()
     return Response(imported_text)
 
 
 def edit_view(request):
-    imported_text = open(os.path.join(HERE, '/templates/edit.html')).read()
+    imported_text = open(os.path.join(HERE, './templates/edit.html')).read()
     return Response(imported_text)
 
 

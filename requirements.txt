@@ -4,7 +4,6 @@ decorator==4.0.10
 ipython==5.1.0
 ipython-genutils==0.1.0
 Jinja2==2.8
--e git+git@github.com:ilikesounds/learning-journal.git@916c2fb2e78fb1e76a0c2ab682a08aab97c495fd#egg=learning_journal_basic
 Mako==1.0.4
 MarkupSafe==0.23
 PasteDeploy==1.5.2
