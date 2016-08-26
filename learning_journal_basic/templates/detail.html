@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../static/styles/normalize.css" media="all and (max-width: 1080px)">
+    <link rel="stylesheet" href="../static/styles/base.css" charset="utf-8">
+    <link rel="stylesheet" href="../static/styles/layout.css" charset="utf-8">
+    <link rel="stylesheet" href="../static/styles/modules.css" charset="utf-8">
+    <link rel="stylesheet" href="../static/styles/state.css" charset="utf-8">
+    <link rel="stylesheet" href="../static/styles/theme.css" charset="utf-8">
+    <title>This is my learning journal</title>
+  </head>
+  <body>
+    <header>
+      <section class="headline">
+        <img src="" alt="" />
+        <h1 class="main-name">jeff torres</h1>
+      </section>
+      <section class="navigation">
+          <section class="nav-item">
+            <a class="icon-home2 nav-item-1"  href="/"></a>
+            <a class="nav-item-2" href="/">Home</a>
+          </section>
+          <section class="nav-item">
+            <a class="icon-stack nav-item-1" data-tabs="new_article" href="/journal/new_entry"></a>
+            <a class="nav-item-2" data-tabs="projectTab" href="/journal/new_entry">New Articles</a>
+          </section>
+          <section class="nav-item">
+            <a class="icon-books nav-item-1" data-tabs="edit_article" href="/journal/edit_view/1"></a>
+            <a class="nav-item-2" data-tabs="educationTab" href="/journal/edit_view/1">Edit</a>
+          </section>
+          <section class="nav-item">
+            <a class="icon-user-tie nav-item-1" data-tabs="aboutMe" href="#"></a>
+            <a class="nav-item-2" data-tabs="aboutMeTab" href="#">About Me</a>
+        </nav>
+      </section>
+    </header>
+    <main>
+        <title>day_09</title>
+        <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(170, 187, 195); overflow: auto; background-color: rgb(38, 50, 56); }
+  .markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+  .markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
+  .markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+  .markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+  .markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+  .markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+  .markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+  .markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+  .markdown-preview:not([data-use-github-style]) strong { color: rgb(255, 255, 255); }
+  .markdown-preview:not([data-use-github-style]) del { color: rgb(122, 149, 161); }
+  .markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(0, 150, 136); }
+  .markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+  .markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+  .markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+  .markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(122, 149, 161); border-color: rgb(71, 93, 105); border-width: 4px; }
+  .markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top-width: 2px; border-top-style: dashed; border-top-color: rgb(71, 93, 105); background: none; }
+  .markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+  .markdown-preview:not([data-use-github-style]) th { color: rgb(255, 255, 255); }
+  .markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(71, 93, 105); }
+  .markdown-preview:not([data-use-github-style]) pre, .markdown-preview:not([data-use-github-style]) code { color: rgb(255, 255, 255); background-color: rgb(54, 72, 80); }
+  .markdown-preview:not([data-use-github-style]) pre, .markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(46, 61, 68); }
+  .markdown-preview:not([data-use-github-style]) kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(71, 93, 105) rgb(71, 93, 105) rgb(59, 77, 86); background-color: rgb(54, 72, 80); }
+  .markdown-preview[data-use-github-style] { font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); overflow: scroll; background-color: rgb(255, 255, 255); }
+  .markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+  .markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+  .markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+  .markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+  .markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+  .markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+  .markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+  .markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+  .markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+  .markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+  .markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+  .markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+  .markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+  .markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+  .markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+  .markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+  .markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+  .markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+  .markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+  .markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+  .markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+  .markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+  .markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+  .markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+  .markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; border: 0px none; background-color: rgb(231, 231, 231); }
+  .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+  .markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+  .markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+  .markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+  .markdown-preview[data-use-github-style] dl { padding: 0px; }
+  .markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+  .markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+  .markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left-width: 4px; border-left-style: solid; border-left-color: rgb(221, 221, 221); }
+  .markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+  .markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+  .markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+  .markdown-preview[data-use-github-style] table th { font-weight: bold; }
+  .markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+  .markdown-preview[data-use-github-style] table tr { border-top-width: 1px; border-top-style: solid; border-top-color: rgb(204, 204, 204); background-color: rgb(255, 255, 255); }
+  .markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+  .markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+  .markdown-preview[data-use-github-style] .emoji { max-width: none; }
+  .markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+  .markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+  .markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+  .markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+  .markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+  .markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+  .markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+  .markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+  .markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+  .markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+  .markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+  .markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+  .markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+  .markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+  .markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157); }
+  .markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+  .markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+  .markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+  .markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; border: 0px; background: transparent; }
+  .markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+  .markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(247, 247, 247); }
+  .markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+  .markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+  .markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
+  .markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+  .markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+  .markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+  .markdown-preview[data-use-github-style] pre, .markdown-preview[data-use-github-style] code { color: inherit; }
+  .markdown-preview[data-use-github-style] pre, .markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+  .scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .horizontal-scrollbar { visibility: hidden; }
+  .scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .horizontal-scrollbar { visibility: visible; }
+  .markdown-preview del { text-decoration: none; position: relative; }
+  .markdown-preview del::after { border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; content: ""; left: 0px; position: absolute; right: 0px; top: 50%; }
+  .markdown-preview .flash { animation: flash 1s ease-out 1; outline: rgba(255, 0, 0, 0) solid 1px; }
+  .markdown-preview .flash:not(li) { display: block; }
+  .markdown-preview { color: rgba(170, 187, 195, 0.8); background-color: rgb(42, 55, 62); }
+  .markdown-preview code { color: rgba(170, 187, 195, 0.8); background-color: rgb(46, 61, 68); }
+  .markdown-preview h1, .markdown-preview h2, .markdown-preview h3 { border-color: rgba(170, 187, 195, 0.0980392); }
+  .markdown-preview table tr { border-color: rgb(59, 77, 86); background: none; }
+  .markdown-preview table tr:nth-child(2n) { background-color: rgb(46, 61, 68); }
+  .markdown-preview table th, .markdown-preview table td { border-color: rgb(59, 77, 86); }
+  .markdown-preview table th { background-color: rgb(54, 72, 80); }
+  .bracket-matcher .region {
+    border-bottom: 1px dotted lime;
+    position: absolute;
+  }
+
+  .spell-check-misspelling .region {
+    border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+  }
+
+  pre.editor-colors,
+  .host {
+    background-color: #263238;
+    color: #aabbc3;
+  }
+  pre.editor-colors .gutter,
+  .host .gutter {
+    background-color: #263238;
+    color: #49656f;
+  }
+  pre.editor-colors .gutter .line-number.cursor-line,
+  .host .gutter .line-number.cursor-line {
+    background-color: rgba(0, 0, 0, 0.19);
+    color: #80cbc4;
+  }
+  pre.editor-colors .gutter .line-number.cursor-line-no-selection,
+  .host .gutter .line-number.cursor-line-no-selection {
+    color: #80cbc4;
+  }
+  pre.editor-colors .wrap-guide,
+  .host .wrap-guide {
+    color: #2b3940;
+  }
+  pre.editor-colors .indent-guide,
+  .host .indent-guide {
+    color: #2b3940;
+  }
+  pre.editor-colors .invisible-character,
+  .host .invisible-character {
+    color: #304047;
+  }
+  pre.editor-colors .search-results .marker .region,
+  .host .search-results .marker .region {
+    background-color: transparent;
+    border: #65737e;
+  }
+  pre.editor-colors .search-results .marker.current-result .region,
+  .host .search-results .marker.current-result .region {
+    border: #cdd3de;
+  }
+  pre.editor-colors.is-focused .cursor,
+  .host(.is-focused) .cursor {
+    border-color: #009688;
+    border-width: 2px;
+  }
+  pre.editor-colors.is-focused .selection .region,
+  .host(.is-focused) .selection .region {
+    background-color: #3b4d56;
+  }
+  pre.editor-colors.is-focused .line-number.cursor-line-no-selection,
+  pre.editor-colors.is-focused .line.cursor-line,
+  .host(.is-focused) .line-number.cursor-line-no-selection,
+  .host(.is-focused) .line.cursor-line {
+    background-color: rgba(0, 0, 0, 0.19);
+  }
+  .variable.parameter.function {
+    color: #eeffff;
+  }
+  .comment,
+  .punctuation.definition.comment,
+  .text.cancelled,
+  .meta.punctuation.separator,
+  .markup.strikethrough {
+    color: #49656f;
+  }
+  .notes {
+    color: #8EACE3;
+  }
+  .text,
+  .source {
+    color: #CDD3DE;
+  }
+  .punctuation.definition.string,
+  .punctuation.definition.string,
+  .punctuation.definition.parameters,
+  .punctuation.definition.string,
+  .punctuation.definition.array {
+    color: #d9f5dd;
+  }
+  .none {
+    color: #99b89d;
+  }
+  .keyword.operator {
+    color: #c792ea;
+  }
+  .keyword {
+    color: #c792ea;
+  }
+  .variable {
+    color: #B2CCD6;
+  }
+  .entity.name.function,
+  .meta.require,
+  .support.function.any-method,
+  .meta.function-call,
+  .support.function,
+  .keyword.other.special-method,
+  .meta.block-level,
+  .meta.function-call.method.with-arguments .variable.function,
+  .source.js .meta.function-call.method.without-arguments.js .variable.function.js {
+    color: #82AAFF;
+  }
+  .support.class,
+  .entity.name.class,
+  .entity.name.type.class,
+  .variable.language.this.js {
+    color: #ffcb6b;
+  }
+  .meta.class {
+    color: #B2CCD6;
+  }
+  .keyword.other.special-method {
+    color: #82B1FF;
+  }
+  .storage {
+    color: #c792ea;
+  }
+  .support.function,
+  .keyword.operator,
+  .constant.other.color,
+  .meta.tag,
+  .punctuation.definition.tag,
+  .punctuation.separator.inheritance.php,
+  .punctuation.definition.tag.html,
+  .punctuation.definition.tag.begin.html,
+  .punctuation.definition.tag.end.html,
+  .meta.function-call .meta.function-call.arguments .variable.parameter.function,
+  .text.html.markdown .meta.paragraph .meta.link.inline,
+  .text.html.markdown .meta.paragraph .meta.link.inline .punctuation.definition.string.begin.markdown,
+  .text.html.markdown .meta.paragraph .meta.link.inline .punctuation.definition.string.end.markdown,
+  .source.gulpfile.js .variable.other.object.js {
+    color: #89DDFF;
+  }
+  .string,
+  .constant.other.symbol,
+  .entity.other.inherited-class {
+    color: #C3E88D;
+  }
+  .constant.numeric {
+    color: #F77669;
+  }
+  .none {
+    color: #F77669;
+  }
+  .meta.function-call .meta.function-call.arguments {
+    color: #C3E88D;
+  }
+  .none {
+    color: #F77669;
+  }
+  .constant {
+    color: #F77669;
+  }
+  .entity.name.tag,
+  .text.html.basic .meta.tag.other.html .entity.other.attribute-name.html {
+    color: #ff5370;
+  }
+  .entity.other.attribute-name,
+  .meta.tag.any.html .entity.other.attribute-name.html,
+  .text.html.basic .meta.tag.other.html .entity.other.attribute-name.html {
+    color: #FFCB6B;
+  }
+  .entity.other.attribute-name.id {
+    color: #FAD430;
+  }
+  .meta.selector {
+    color: #c792ea;
+  }
+  .none {
+    color: #F77669;
+  }
+  .markup.heading .punctuation.definition.heading,
+  .entity.name.section {
+    color: #78ccf0;
+  }
+  .keyword.other.unit {
+    color: #F77669;
+  }
+  .markup.bold,
+  .punctuation.definition.bold,
+  .todo.bold {
+    font-weight: bold;
+    color: #ffcb6b;
+  }
+  .markup.italic,
+  .punctuation.definition.italic,
+  .todo.italic {
+    font-style: italic;
+    color: #c792ea;
+  }
+  .markup.raw.inline {
+    color: #f1e655;
+  }
+  .string.other.link,
+  .punctuation.definition.string.end.markdown {
+    color: #ff5370;
+  }
+  .meta.link {
+    color: #F77669;
+  }
+  .markup.list {
+    color: #ff5370;
+  }
+  .markup.quote {
+    color: #F77669;
+  }
+  .meta.separator {
+    color: #d9f5dd;
+    background-color: #1e3445;
+  }
+  .markup.inserted {
+    color: #F1E655;
+  }
+  .markup.deleted {
+    color: #ff5370;
+  }
+  .markup.changed {
+    color: #c792ea;
+  }
+  .constant.other.color,
+  .meta.property-value .support.constant.named-color.css {
+    color: #FFEB95;
+  }
+  .string.regexp {
+    color: #80CBC4;
+  }
+  .constant.character.escape {
+    color: #F77669;
+  }
+  .punctuation.section.embedded,
+  .variable.interpolation {
+    color: #d3423e;
+  }
+  .invalid.illegal {
+    color: #ffffff;
+    background-color: #EC5F67;
+  }
+  .invalid.broken {
+    color: #020e14;
+    background-color: #F77669;
+  }
+  .invalid.deprecated {
+    color: #ffffff;
+    background-color: #d3423e;
+  }
+  .invalid.unimplemented {
+    color: #ffffff;
+    background-color: #8BD649;
+  }
+  .sublimelinter.annotations {
+    color: #7b5157;
+    background-color: #fffff7;
+  }
+  .sublimelinter.outline.illegal {
+    color: #ffffff;
+    background-color: #ff9599;
+  }
+  .sublimelinter.underline.illegal {
+    background-color: #ff4941;
+  }
+  .sublimelinter.outline.warning {
+    color: #ffffff;
+    background-color: #FFCF1B;
+  }
+  .sublimelinter.underline.warning {
+    background-color: #ff4941;
+  }
+  .sublimelinter.outline.violation {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .sublimelinter.underline.violation {
+    background-color: #ff4941;
+  }
+  .sublimelinter.mark.error {
+    color: #ff572d;
+  }
+  .sublimelinter.mark.warning {
+    color: #ffcf1b;
+  }
+  .sublimelinter.gutter-mark {
+    color: #ffffff;
+  }
+  .markup.deleted.git_gutter {
+    color: #EC5F67;
+  }
+  .markup.changed.git_gutter {
+    color: #FFCF1B;
+  }
+  .markup.inserted.git_gutter {
+    color: #C3E88D;
+  }
+  .markup.ignored.git_gutter {
+    color: #49656f;
+  }
+  .comment.line.double-slash .punctuation.definition.comment,
+  .meta.structure.array .comment.block.json .punctuation.definition.comment {
+    color: #5C7E8C;
+  }
+  .text.find-in-files .entity.name.filename.find-in-files {
+    color: #FFEB95;
+  }
+  .support.type.property-name {
+    color: #80CBC4;
+  }
+  .meta.property-list .meta.property-name {
+    color: #80CBC4;
+  }
+  .source.css .keyword.other.unit,
+  .source.less .keyword.other.unit,
+  .source.scss .keyword.other.unit,
+  .source.sass .keyword.other.unit {
+    color: #FFEB95;
+  }
+  .entity.other.less.mixin {
+    color: #7986CB;
+  }
+  .source.less .parameter.less .variable.parameter.misc.css {
+    color: #7986CB;
+  }
+  .source.less .meta.property-value.css .string.quoted.double.css .comment .markup.raw {
+    color: #C3E88D;
+  }
+  .constant.other.color.rgb-value .punctuation.definition.constant {
+    color: #F77669;
+  }
+  .meta.attribute-selector .string.unquoted.attribute-value {
+    color: #C3E88D;
+  }
+  .meta.attribute-selector .entity.other.attribute-name.attribute {
+    color: #F77669;
+  }
+  .source.gulpfile.js .meta.group.braces.round .meta.group.braces.curly .meta.group.braces.round .meta.function-call.with-arguments.js .variable.function.js,
+  .source.gulpfile.js .meta.group.braces.round .meta.group.braces.curly .variable.function.js {
+    color: #7986CB;
+  }
+  .meta.function-call .support.type,
+  .support.type {
+    color: #FFEB95;
+  }
+  .source.python .meta.function-call.arguments.python {
+    color: #7986CB;
+  }
+  .embedding.php .entity.name.tag {
+    color: #ff5370;
+  }
+  .source.go .meta.function-call.go {
+    color: #DDDDDD;
+  }
+  .meta.group.braces.curly.js .meta.property.object.js .variable.other.object.js {
+    color: #FFEB95;
+  }
+  .source.json .meta.structure.dictionary.json .meta.structure.dictionary.value .constant.language {
+    color: #f77669;
+  }
+  .source.elixir .support.type.elixir,
+  .source.elixir .meta.module.elixir .entity.name.class.elixir {
+    color: #82AAFF;
+  }
+  .source.elixir .entity.name.function {
+    color: #ffcb6b;
+  }
+  .source.elixir .constant.other.symbol.elixir,
+  .source.ruby .constant.other.symbol {
+    color: #F77669;
+  }
+  .source.elixir .punctuation.definition.string {
+    color: #C3E88D;
+  }
+  .source.elixir .variable.other.readwrite.module.elixir,
+  .source.elixir .variable.other.readwrite.module.elixir .punctuation.definition.variable.elixir {
+    color: #ffcb6b;
+  }
+  .source.elixir .punctuation.binary.elixir {
+    color: #c792ea;
+  }
+  .support.type.sys-types {
+    color: #ffcb6b;
+  }
+  .constant.numeric.line-number.find-in-files:not(.match),
+  .text.find-in-files .constant.numeric.line-number.find-in-files {
+    color: #37474F;
+  }
+  .entity.name.filename.find-in-files,
+  .text.find-in-files .constant.numeric.line-number.match.find-in-files {
+    color: #FFEB95;
+  }
+  [data-grammar*="gfm"]::shadow .markup.underline.link {
+    color: #ff869a;
+  }
+  [data-grammar*="gfm"]::shadow .markup.underline.link span.punctuation {
+    color: #ff5370;
+  }
+  [data-grammar*="gfm"]::shadow .markup.strike {
+    position: relative;
+    color: rgba(170, 187, 195, 0.5);
+  }
+  [data-grammar*="gfm"]::shadow .markup.strike::after {
+    content: "";
+    position: absolute;
+    top: calc(54%);
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: rgba(170, 187, 195, 0.2);
+  }
+  [data-grammar*="gfm"]::shadow .table .border {
+    color: rgba(170, 187, 195, 0.5);
+  }
+  [data-grammar*="gfm"]::shadow .markup.heading {
+    color: #82b1ff;
+  }
+  [data-grammar*="gfm"]::shadow .punctuation.definition.begin,
+  [data-grammar*="gfm"]::shadow .punctuation.definition.end {
+    color: #82b1ff;
+  }
+  [data-grammar*="gfm"]::shadow .punctuation.definition.begin + span:not(.function.parameter) {
+    color: #9cc1ff;
+  }
+  .bracket-matcher .region {
+    border-bottom: 1px solid #009688;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: rgba(170, 187, 195, 0.1);
+    box-shadow: inset 0 -1px 0 #009688;
+    z-index: 100;
+  }
+  pre.editor-colors.is-focused .selection .region,
+  .host(.is-focused) .selection .region {
+    background-color: #3b4d56;
+    border-radius: 0.125rem;
+  }
+  .variable.instance,
+  .variable.instance > * {
+    color: #ff5370;
+  }
+  .meta.delimiter.period {
+    color: #c792ea;
+  }
+  .meta.brace {
+    color: #89DDFF;
+  }
+  .meta.tag.doctype {
+    color: #c792ea;
+  }
+  .meta .string.quoted {
+    color: #C3E88D;
+  }
+  .meta.array.json .string.quoted {
+    color: #80CBC4;
+  }
+  .meta.array.json .string.quoted > * {
+    color: currentColor;
+  }
+  .meta .punctuation.separator.key-value + .string.quoted {
+    color: #80CBC4;
+  }
+  .meta .punctuation.separator.key-value + .string.quoted * {
+    color: currentColor;
+  }
+  .meta.structure.dictionary .string.quoted {
+    color: #C3E88D;
+  }
+  .meta.structure.dictionary .string.quoted .punctuation.string {
+    color: currentColor;
+  }
+  .support.constant {
+    color: #89DDFF;
+  }
+  .keyword.operator.logical,
+  .keyword.operator.comparison,
+  .keyword.operator.assignment {
+    color: #c792ea;
+  }
+  .punctuation.section.embedded .source.php,
+  .variable.interpolation .source.php {
+    color: currentColor;
+  }
+  </style>
+    </head>
+    <body class='markdown-preview'><h2>Successes:</h2>
+  <ol>
+  <li></li>
+  </ol>
+  <hr>
+  <h2>Challenges:</h2>
+  <ol>
+  <li>What happens of the URI has … in it</li>
+  <li>DO you allow people to climb outside the webroot directory</li>
+  <li>detect what kind of file is requested</li>
+  <li>how do you handle mime-type</li>
+  </ol>
+  <!-- 5. how do you handle img, byte? -->
+  <hr>
+  <h2>TODO:</h2>
+  <ol>
+  <li>Refactor SLL and DLL and Stack using property methods.</li>
+  <li>Create mockups of a learning journal.</li>
+  <li><strong>SO MUCH MORE…</strong></li>
+  </ol>
+  <hr>
+  <h2>Notes:</h2>
+  <ul>
+  <li>
+  <p><strong>Code Review:</strong></p>
+  <ul>
+  <li>Docstring in dll init: init expects iterable input.</li>
+  <li><strong>DLL push example below:</strong>
+  <ul>
+  <li>DLL code examples courtesy of <a href="https://github.com/crashtack/data-structures">Crashtack</a></li>
+  </ul>
+  </li>
+  </ul>
+  <pre class="editor-colors lang-python"><div class="line"><span class="source python"><span class="meta function python"><span class="storage type function python"><span>def</span></span><span>&nbsp;</span><span class="entity name function python"><span>push</span></span><span class="punctuation definition parameters begin python"><span>(</span></span><span class="meta function parameters python"><span class="variable parameter function python"><span>self</span></span><span class="punctuation separator parameters python"><span>,</span></span><span>&nbsp;</span><span class="variable parameter function python"><span>val</span></span></span><span class="punctuation definition parameters end python"><span>)</span></span><span class="punctuation section function begin python"><span>:</span></span></span></span></div><div class="line"><span class="source python"><span>new_node</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span class="meta function-call python"><span>Node</span><span class="punctuation definition arguments begin python"><span>(</span></span><span class="meta function-call arguments python"><span>val</span></span><span class="punctuation definition arguments end python"><span>)</span></span></span></span></div><div class="line"><span class="source python"><span class="keyword control conditional python"><span>if</span></span><span>&nbsp;</span><span class="variable language self python"><span>self</span></span><span>.</span><span>head</span><span>&nbsp;</span><span class="keyword operator logical python"><span>is</span></span><span>&nbsp;</span><span class="constant language python"><span>None</span></span><span>:</span></span></div><div class="line"><span class="source python"><span>	</span><span class="variable language self python"><span>self</span></span><span>.</span><span>head</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>new_node</span></span></div><div class="line"><span class="source python"><span>	</span><span class="variable language self python"><span>self</span></span><span>.</span><span>tail</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>new_node</span></span></div><div class="line"><span class="source python"><span class="keyword control conditional python"><span>else</span></span><span>:</span></span></div><div class="line"><span class="source python"><span>	</span><span class="variable language self python"><span>self</span></span><span>.</span><span>head</span><span>.</span><span>pre_node</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>new_node</span></span></div><div class="line"><span class="source python"><span>	</span><span>new_node</span><span>.</span><span>next_node</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span class="variable language self python"><span>self</span></span><span>.</span><span>head</span></span></div><div class="line"><span class="source python"><span>	</span><span class="variable language self python"><span>self</span></span><span>.</span><span>head</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>new_node</span></span></div></pre>
+  <ul>
+  <li>Code example below is an extremely common algorithm to cycle through a series of pointers.</li>
+  </ul>
+  <pre class="editor-colors lang-python"><div class="line"><span class="source python"><span class="keyword control repeat python"><span>while</span></span><span>&nbsp;</span><span>current</span><span>:</span></span></div><div class="line"><span class="source python"><span>	</span><span class="keyword control conditional python"><span>if</span></span><span>&nbsp;</span><span>current</span><span>.</span><span>data</span><span>&nbsp;</span><span class="keyword operator comparison python"><span>==</span></span><span>&nbsp;</span><span>val</span><span>:</span></span></div><div class="line"><span class="source python"><span>		</span><span class="keyword control statement python"><span>return</span></span><span>&nbsp;</span><span>current</span></span></div><div class="line"><span class="source python"><span>	</span><span class="keyword control conditional python"><span>else</span></span><span>:</span></span></div><div class="line"><span class="source python"><span>		</span><span>current</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>current</span><span>.</span><span>next_node</span></span></div><div class="line"><span class="source python"><span>	</span><span class="keyword control statement python"><span>return</span></span><span>&nbsp;</span><span>current</span></span></div></pre>
+  <ul>
+  <li><strong>HTTP-server code review:</strong>
+  <ul>
+  <li>Http-server code examples courtesy of <a href="https://github.com/Bl41r/http_server">bl41r</a> and <a href="https://github.com/Mikekh84/http-server">mikekh84</a></li>
+  <li>Proper error code response is 405: Method not allowed.</li>
+  <li>Python not implemented error</li>
+  </ul>
+  </li>
+  </ul>
+  <pre class="editor-colors lang-python"><div class="line"><span class="source python"><span class="meta class python"><span class="storage type class python"><span>class</span></span><span>&nbsp;</span><span class="entity name type class python"><span>HTTPException</span></span><span class="punctuation definition inheritance begin python"><span>(</span></span><span class="meta class inheritance python"><span class="entity other inherited-class python"><span class="support type exception python"><span>Exception</span></span></span></span><span class="punctuation definition inheritance end python"><span>)</span></span><span class="punctuation section class begin python"><span>:</span></span></span></span></div><div class="line"><span class="source python"><span class="meta function python"><span>	</span><span class="storage type function python"><span>def</span></span><span>&nbsp;</span><span class="entity name function python"><span class="support function magic python"><span>__init__</span></span></span><span class="punctuation definition parameters begin python"><span>(</span></span><span class="meta function parameters python"><span class="variable parameter function python"><span>self</span></span><span class="punctuation separator parameters python"><span>,</span></span><span>&nbsp;</span><span class="variable parameter function python"><span>code</span></span><span class="punctuation separator parameters python"><span>,</span></span><span>&nbsp;</span><span class="variable parameter function python"><span>reason</span></span><span class="punctuation separator parameters python"><span>,</span></span><span>&nbsp;</span><span class="variable parameter function python"><span>htmlstring</span></span></span><span class="punctuation definition parameters end python"><span>)</span></span><span class="punctuation section function begin python"><span>:</span></span></span></span></div><div class="line"><span class="source python"><span>		</span><span class="variable language self python"><span>self</span></span><span>.</span><span>code</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>code</span></span></div><div class="line"><span class="source python"><span>		</span><span class="variable language self python"><span>self</span></span><span>.</span><span>reason</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>reason</span></span></div><div class="line"><span class="source python"><span>		</span><span class="variable language self python"><span>self</span></span><span>.</span><span>htmlstring</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>htmlstring</span></span></div><div class="line"><span class="source python"><span>&nbsp;</span></span></div><div class="line"><span class="source python"><span class="meta function python"><span>	</span><span class="storage type function python"><span>def</span></span><span>&nbsp;</span><span class="entity name function python"><span>as_response</span></span><span class="punctuation definition parameters begin python"><span>(</span></span><span class="meta function parameters python"><span class="variable parameter function python"><span>self</span></span></span><span class="punctuation definition parameters end python"><span>)</span></span><span class="punctuation section function begin python"><span>:</span></span></span></span></div><div class="line"><span class="source python"><span>		</span><span>template</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span class="string quoted single single-line python"><span class="punctuation definition string begin python"><span>&#39;</span></span><span>HTTP/1.1&nbsp;</span><span class="constant other placeholder python"><span>{}</span></span><span>&nbsp;</span><span class="constant other placeholder python"><span>{}</span></span><span class="constant character escape return python"><span>\r</span></span><span class="constant character escape linefeed python"><span>\n</span></span><span class="constant character escape return python"><span>\r</span></span><span class="constant character escape linefeed python"><span>\n</span></span><span class="constant other placeholder python"><span>{}</span></span><span class="punctuation definition string end python"><span>&#39;</span></span></span></span></div><div class="line"><span class="source python"><span>		</span><span class="keyword control statement python"><span>return</span></span><span>.</span><span class="meta function-call python"><span>t</span><span>emplate</span><span>.</span><span>format</span><span class="punctuation definition arguments begin python"><span>(</span></span><span class="meta function-call arguments python"><span class="variable language self python"><span>self</span></span><span>.</span><span>code</span><span>,&nbsp;</span><span class="variable language self python"><span>self</span></span><span>.</span><span>reason</span><span>,&nbsp;</span><span class="variable language self python"><span>self</span></span><span>.</span><span>htmlstring</span></span><span class="punctuation definition arguments end python"><span>)</span></span></span></span></div></pre>
+  </li>
+  </ul>
+  <h2>Write functions that either <strong>RETURN A VALUE OR RAISE AN ERROR</strong></h2>
+  <ul>
+  <li>
+  <p><strong><a href="https://codefellows.github.io/sea-python-401d4/lectures/queue.html">Queue:</a></strong></p>
+  <ul>
+  <li>FIFO: First in first out
+  <ul>
+  <li>Queue</li>
+  </ul>
+  </li>
+  <li>LIFO: Last in first out
+  <ul>
+  <li>Single Linked List</li>
+  <li>Dbl Linked List</li>
+  </ul>
+  </li>
+  </ul>
+  </li>
+  <li>
+  <p><strong><a href="https://codefellows.github.io/sea-python-401d4/lectures/intro_to_python_7_properties.html">Properties:</a></strong></p>
+  <ul>
+  <li><strong>Don’t use GETTERS or SETTERS</strong></li>
+  <li>property is a built-in function.</li>
+  <li>code example below:</li>
+  </ul>
+  <pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>class&nbsp;C(object):</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>def&nbsp;__init__(self,&nbsp;x=5):</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>self._x&nbsp;=&nbsp;x</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>def&nbsp;_getx(self):</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>return&nbsp;self._x</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>def&nbsp;_setx(self,&nbsp;value):</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>self._x&nbsp;=&nbsp;value</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>def&nbsp;_delx(self):</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>del&nbsp;self._x</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>x&nbsp;=&nbsp;property(_getx,&nbsp;_setx,&nbsp;_delx,&nbsp;doc=&quot;docstring&quot;)</span></span></span></div></pre>
+  <ul>
+  <li>Live code example:
+  <ul>
+  <li>The property parameters below are positional arguments.</li>
+  <li>Property can only be <em>getter</em>, <em>setter</em>, <em>deleter</em> and <em>docstring</em>.</li>
+  <li><strong>@property means getter has to come first in script.</strong></li>
+  </ul>
+  </li>
+  </ul>
+  <pre class="editor-colors lang-python"><div class="line"><span class="source python"><span class="keyword control import from python"><span>from</span></span><span>&nbsp;</span><span>__future__</span><span>&nbsp;</span><span class="keyword control import python"><span>import</span></span><span>&nbsp;</span><span>division</span></span></div><div class="line"><span class="source python"><span class="keyword control import from python"><span>from</span></span><span>&nbsp;</span><span>math</span><span>&nbsp;</span><span class="keyword control import python"><span>import</span></span><span>&nbsp;</span><span>pi</span></span></div><div class="line"><span class="source python"><span>&nbsp;</span></span></div><div class="line"><span class="source python"><span class="meta class python"><span class="storage type class python"><span>class</span></span><span>&nbsp;</span><span class="entity name type class python"><span>Circle</span></span><span class="punctuation definition inheritance begin python"><span>(</span></span><span class="meta class inheritance python"><span class="entity other inherited-class python"><span class="support function builtin python"><span>object</span></span></span></span><span class="punctuation definition inheritance end python"><span>)</span></span><span class="punctuation section class begin python"><span>:</span></span></span></span></div><div class="line"><span class="source python"><span>&nbsp;</span></span></div><div class="line"><span class="source python"><span class="meta function python"><span>	</span><span class="storage type function python"><span>def</span></span><span>&nbsp;</span><span class="entity name function python"><span class="support function magic python"><span>__init__</span></span></span><span class="punctuation definition parameters begin python"><span>(</span></span><span class="meta function parameters python"><span class="variable parameter function python"><span>self</span></span><span class="punctuation separator parameters python"><span>,</span></span><span>&nbsp;</span><span class="variable parameter function python"><span>radius</span></span></span><span class="punctuation definition parameters end python"><span>)</span></span><span class="punctuation section function begin python"><span>:</span></span></span></span></div><div class="line"><span class="source python"><span>		</span><span class="variable language self python"><span>self</span></span><span>.</span><span>radius</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>radius</span></span></div><div class="line"><span class="source python"><span>&nbsp;</span></span></div><div class="line"><span class="source python"><span class="meta function decorator python"><span>	</span><span class="entity name function decorator python"><span>@</span><span class="support function builtin python"><span>property</span></span></span></span></span></div><div class="line"><span class="source python"><span class="meta function python"><span>	</span><span class="storage type function python"><span>def</span></span><span>&nbsp;</span><span class="entity name function python"><span>diameter</span></span><span class="punctuation definition parameters begin python"><span>(</span></span><span class="meta function parameters python"><span class="variable parameter function python"><span>self</span></span></span><span class="punctuation definition parameters end python"><span>)</span></span><span class="punctuation section function begin python"><span>:</span></span></span></span></div><div class="line"><span class="source python"><span>		</span><span class="string quoted single block sql python"><span class="punctuation definition string begin python"><span>&#39;&#39;&#39;</span></span><span>The&nbsp;diameter&nbsp;of&nbsp;our&nbsp;circle</span><span class="punctuation definition string end python"><span>&#39;&#39;&#39;</span></span></span></span></div><div class="line"><span class="source python"><span>		</span><span class="keyword other python"><span>print</span></span><span>(</span><span class="string quoted single single-line python"><span class="punctuation definition string begin python"><span>&#39;</span></span><span>diameter&nbsp;getter&nbsp;method</span><span class="punctuation definition string end python"><span>&#39;</span></span></span><span>)</span></span></div><div class="line"><span class="source python"><span>		</span><span class="keyword control statement python"><span>return</span></span><span>&nbsp;</span><span class="variable language self python"><span>self</span></span><span>.</span><span>radius</span><span>&nbsp;</span><span class="keyword operator arithmetic python"><span>*</span></span><span>&nbsp;</span><span class="constant numeric integer decimal python"><span>2</span></span></span></div><div class="line"><span class="source python"><span>&nbsp;</span></span></div><div class="line"><span class="source python"><span class="meta function decorator python"><span>	</span><span class="entity name function decorator python"><span>@</span><span>diameter</span><span>.</span><span>setter</span></span></span></span></div><div class="line"><span class="source python"><span class="meta function python"><span>	</span><span class="storage type function python"><span>def</span></span><span>&nbsp;</span><span class="entity name function python"><span>diameter</span></span><span class="punctuation definition parameters begin python"><span>(</span></span><span class="meta function parameters python"><span class="variable parameter function python"><span>self</span></span><span class="punctuation separator parameters python"><span>,</span></span><span>&nbsp;</span><span class="variable parameter function python"><span>value</span></span></span><span class="punctuation definition parameters end python"><span>)</span></span><span class="punctuation section function begin python"><span>:</span></span></span></span></div><div class="line"><span class="source python"><span>		</span><span class="keyword other python"><span>print</span></span><span>(</span><span class="string quoted single single-line python"><span class="punctuation definition string begin python"><span>&#39;</span></span><span>diameter&nbsp;setter&nbsp;method</span><span class="punctuation definition string end python"><span>&#39;</span></span></span><span>)</span></span></div><div class="line"><span class="source python"><span>		</span><span class="variable language self python"><span>self</span></span><span>.</span><span>radius</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span>values</span><span>&nbsp;</span><span class="keyword operator arithmetic python"><span>/</span></span><span>&nbsp;</span><span class="constant numeric integer decimal python"><span>2</span></span></span></div><div class="line"><span class="source python"><span>&nbsp;</span></span></div><div class="line"><span class="source python"><span class="punctuation whitespace comment leading python"><span>	</span></span><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;The&nbsp;property&nbsp;below&nbsp;is&nbsp;read&nbsp;only</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span class="meta function decorator python"><span>	</span><span class="entity name function decorator python"><span>@</span><span class="support function builtin python"><span>property</span></span></span></span></span></div><div class="line"><span class="source python"><span class="meta function python"><span>	</span><span class="storage type function python"><span>def</span></span><span>&nbsp;</span><span class="entity name function python"><span>get_area</span></span><span class="punctuation definition parameters begin python"><span>(</span></span><span class="meta function parameters python"><span class="variable parameter function python"><span>self</span></span></span><span class="punctuation definition parameters end python"><span>)</span></span><span class="punctuation section function begin python"><span>:</span></span></span></span></div><div class="line"><span class="source python"><span>		</span><span class="keyword control statement python"><span>return</span></span><span>&nbsp;</span><span>pi</span><span>&nbsp;</span><span class="keyword operator arithmetic python"><span>*</span></span><span>&nbsp;</span><span class="variable language self python"><span>self</span></span><span>.</span><span>radius</span><span>&nbsp;</span><span class="keyword operator arithmetic python"><span>*</span><span>*</span></span><span>&nbsp;</span><span class="constant numeric integer decimal python"><span>2</span></span></span></div></pre>
+  <ul>
+  <li><strong>Example below is showing SLL using properties.</strong></li>
+  </ul>
+  <pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>class&nbsp;Node(object):</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>	</span><span class="meta paragraph text"><span>def&nbsp;__init__(self,&nbsp;val,&nbsp;next=None,&nbsp;prev=None):</span></span></span></div><div class="line"><span class="text plain"><span>		</span><span class="meta paragraph text"><span>self.val&nbsp;=&nbsp;val</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>		self._next&nbsp;=&nbsp;next</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>		self._prev&nbsp;=prev</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>	</span><span class="meta paragraph text"><span>def&nbsp;__repr__():</span></span></span></div><div class="line"><span class="text plain"><span>		</span><span class="meta paragraph text"><span>return&nbsp;&#39;({}).format(self.val)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>	</span><span class="meta paragraph text"><span>@property</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>	def&nbsp;next(self):</span></span></span></div><div class="line"><span class="text plain"><span>		</span><span class="meta paragraph text"><span>return&nbsp;self._next</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>	</span><span class="meta paragraph text"><span>@next.setter</span></span></span></div><div class="line"><span class="text plain"><span>		</span><span class="meta paragraph text"><span>def&nbsp;next(self,&nbsp;node):</span></span></span></div><div class="line"><span class="text plain"><span>			</span><span class="meta paragraph text"><span>if&nbsp;not&nbsp;isinstance(node,&nbsp;Node):</span></span></span></div><div class="line"><span class="text plain"><span>				</span><span class="meta paragraph text"><span>raise&nbsp;TypeError(&#39;Next&nbsp;must&nbsp;be&nbsp;a&nbsp;Node&nbsp;instance&#39;)</span></span></span></div><div class="line"><span class="text plain"><span>			</span><span class="meta paragraph text"><span>self._next&nbsp;=&nbsp;node</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>			node._prev&nbsp;=&nbsp;self</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>	</span><span class="meta paragraph text"><span>@next.deleter</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>	def&nbsp;next(self):</span></span></span></div><div class="line"><span class="text plain"><span>		</span><span class="meta paragraph text"><span>old_next&nbsp;=&nbsp;self.next</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>		self._next&nbsp;=&nbsp;None</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>		old_next.prev&nbsp;=&nbsp;None</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>	</span><span class="meta paragraph text"><span>@property</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>	def&nbsp;prev(self):</span></span></span></div><div class="line"><span class="text plain"><span>		</span><span class="meta paragraph text"><span>return&nbsp;self._prev</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>	</span><span class="meta paragraph text"><span>@prev.setter</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>	def&nbsp;prev(self,&nbsp;node):</span></span></span></div><div class="line"><span class="text plain"><span>		</span><span class="meta paragraph text"><span>if&nbsp;not&nbsp;isinstance(node,&nbsp;Node):</span></span></span></div><div class="line"><span class="text plain"><span>			</span><span class="meta paragraph text"><span>raise&nbsp;TypeError(&#39;Next&nbsp;must&nbsp;be&nbsp;a&nbsp;Node&nbsp;instance&#39;)</span></span></span></div><div class="line"><span class="text plain"><span>		</span><span class="meta paragraph text"><span>self._prev&nbsp;=&nbsp;node</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>		node._next&nbsp;=&nbsp;self</span></span></span></div></pre>
+  </li>
+  <li>
+  <p><a href="https://codefellows.github.io/sea-python-401d4/lectures/async.html">Concurrency</a>:</p>
+  <ul>
+  <li>Synchronous operations cause problems when scaling.</li>
+  <li><em>Select</em>:
+  <ul>
+  <li>Simple concurrency with <code>select</code> built-in can accommodate this:
+  <ul>
+  <li>The module provides select, an interface to the underlying Unix select system call. The purpose of select is to take a list of possible I/O channels (file handles, Unix sockets, network sockets) and return lists of those that are ready to be read, written or in an error state.</li>
+  </ul>
+  </li>
+  </ul>
+  </li>
+  <li><em>Threading</em>:</li>
+  <li><strong>DON’T USE THE THREAD MODULE DIRECTLY</strong>
+  <ul>
+  <li>lightweight independent process</li>
+  <li>single CPU</li>
+  <li>share memory with each-other and their parent process</li>
+  <li>convenient but complex
+  <ul>
+  <li>Race conditions</li>
+  <li>deadlocks</li>
+  <li>hard to debug</li>
+  </ul>
+  </li>
+  <li>You can only ever access one thread at a time.</li>
+  </ul>
+  </li>
+  <li><em>Multiprocessing</em>:
+  <ul>
+  <li>Basically same API as <em>threading</em>.</li>
+  <li>Does not share memory.</li>
+  <li>Messages must be passed if shared state is required</li>
+  <li><strong>No Shared Resources</strong> == No deadlocks or race conditions.</li>
+  <li>Better choice for Python concurrency.</li>
+  </ul>
+  </li>
+  <li><em>ASync Concurrency</em>:
+  <ul>
+  <li>Uses events to handle I/O outside the flow of the main process.
+  <ul>
+  <li>Events:
+  <ul>
+  <li>e.g. Client socket connecting</li>
+  </ul>
+  </li>
+  </ul>
+  </li>
+  <li>There are two models for this type of event-driven operation. These two methods are nicely modeled by two well-known packages in the Python ecosystem:
+  <ul>
+  <li>Callbacks : <a href="https://pypi.python.org/pypi/Twisted">twisted</a> package</li>
+  <li>Coroutines. : <a href="http://sdiehl.github.io/gevent-tutorial/">gevent</a> package</li>
+  </ul>
+  </li>
+  </ul>
+  </li>
+  </ul>
+  </li>
+  </ul>
+  <h3><strong>Super awesome params with fixtures demo:(Thanks Will!):</strong></h3>
+  <ul>
+  <li>This is a great method for simplifying your unit testing with pytest fixtues. It allows you to parametrize your assertions in a way that requires you to only have to write one or two tests. USing the method below we went from 6 or 7 tests down to two.</li>
+  </ul>
+  <pre class="editor-colors lang-python"><div class="line"><span class="source python"><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>conftest.py&nbsp;file</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span class="keyword control import python"><span>import</span></span><span>&nbsp;</span><span>pytest</span></span></div><div class="line"><span class="source python"><span class="keyword control import from python"><span>from</span></span><span>&nbsp;</span><span>linked_list</span><span>&nbsp;</span><span class="keyword control import python"><span>import</span></span><span>&nbsp;</span><span>Node</span><span>,&nbsp;</span><span>LinkedList</span></span></div><div class="line"><span class="source python"><span>&nbsp;</span></span></div><div class="line"><span class="source python"><span>ll_list</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span class="meta structure list python"><span class="punctuation definition list begin python"><span>[</span></span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span class="meta structure list python"><span class="meta structure list item python"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta structure list python"><span class="punctuation definition list begin python"><span>[</span></span><span class="meta structure list item python"><span class="string quoted single single-line python"><span class="punctuation definition string begin python"><span>&#39;</span></span><span>1</span><span class="punctuation definition string end python"><span>&#39;</span></span></span></span><span class="punctuation separator list python"><span>,</span></span><span>&nbsp;</span><span class="meta structure list item python"><span class="string quoted single single-line python"><span class="punctuation definition string begin python"><span>&#39;</span></span><span>a</span><span class="punctuation definition string end python"><span>&#39;</span></span></span></span><span class="punctuation separator list python"><span>,</span></span><span>&nbsp;</span><span class="meta structure list item python"><span class="string quoted single single-line python"><span class="punctuation definition string begin python"><span>&#39;</span></span><span>2b</span><span class="punctuation definition string end python"><span>&#39;</span></span></span></span><span class="punctuation separator list python"><span>,</span></span><span>&nbsp;</span><span class="meta structure list item python"><span class="string quoted single single-line python"><span class="punctuation definition string begin python"><span>&#39;</span></span><span>abc</span><span class="punctuation definition string end python"><span>&#39;</span></span></span></span><span class="punctuation separator list python"><span>,</span></span><span>&nbsp;</span><span class="meta structure list item python"><span class="constant numeric integer decimal python"><span>3</span></span></span><span class="punctuation separator list python"><span>,</span></span><span>&nbsp;</span><span class="meta structure list item python"><span class="constant numeric integer decimal python"><span>4</span></span></span><span class="punctuation definition list end python"><span>]</span></span></span></span><span class="punctuation separator list python"><span>,</span></span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span class="meta structure list python"><span class="meta structure list item python"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single single-line python"><span class="punctuation definition string begin python"><span>&#39;</span></span><span>abc</span><span class="punctuation definition string end python"><span>&#39;</span></span></span></span><span class="punctuation separator list python"><span>,</span></span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span class="meta structure list python"><span class="meta structure list item python"><span class="punctuation whitespace comment leading python"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;1,</span><span>&nbsp;</span></span></span></span></span></div><div class="line"><span class="source python"><span class="meta structure list python"><span class="meta structure list item python"><span class="punctuation whitespace comment leading python"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>&nbsp;[],</span><span>&nbsp;</span></span></span></span></span></div><div class="line"><span class="source python"><span class="meta structure list python"><span class="meta structure list item python"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta function-call python"><span class="support function builtin python"><span>list</span></span><span class="punctuation definition arguments begin python"><span>(</span></span><span class="meta function-call arguments python"><span class="meta function-call python"><span class="support function builtin python"><span>range</span></span><span class="punctuation definition arguments begin python"><span>(</span></span><span class="meta function-call arguments python"><span class="constant numeric integer decimal python"><span>100</span></span></span><span class="punctuation definition arguments end python"><span>)</span></span></span></span><span class="punctuation definition arguments end python"><span>)</span></span></span></span></span></span></div><div class="line"><span class="source python"><span class="meta structure list python"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="punctuation definition list end python"><span>]</span></span></span></span></div><div class="line"><span class="source python"><span>&nbsp;</span></span></div><div class="line"><span class="source python"><span>&nbsp;</span></span></div><div class="line"><span class="source python"><span class="meta function decorator python"><span class="entity name function decorator python"><span>@</span><span>pytest</span><span>.</span><span>fixture</span></span><span class="punctuation definition arguments begin python"><span>(</span></span><span class="meta function decorator arguments python"><span class="variable parameter function python"><span>scope</span></span><span class="keyword operator assignment python"><span>=</span></span><span class="string quoted double single-line python"><span class="punctuation definition string begin python"><span>&quot;</span></span><span>function</span><span class="punctuation definition string end python"><span>&quot;</span></span></span><span class="punctuation separator parameters python"><span>,</span></span><span>&nbsp;</span><span class="variable parameter function python"><span>params</span></span><span class="keyword operator assignment python"><span>=</span></span><span>ll_list</span></span><span class="punctuation definition arguments end python"><span>)</span></span></span></span></div><div class="line"><span class="source python"><span class="meta function python"><span class="storage type function python"><span>def</span></span><span>&nbsp;</span><span class="entity name function python"><span>all_fix</span></span><span class="punctuation definition parameters begin python"><span>(</span></span><span class="meta function parameters python"><span class="variable parameter function python"><span>request</span></span></span><span class="punctuation definition parameters end python"><span>)</span></span><span class="punctuation section function begin python"><span>:</span></span></span></span></div><div class="line"><span class="source python"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>result</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span class="meta structure dictionary python"><span class="punctuation definition dictionary begin python"><span>{</span></span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span class="meta structure dictionary python"><span class="meta structure dictionary key python"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single single-line python"><span class="punctuation definition string begin python"><span>&#39;</span></span><span>instance</span><span class="punctuation definition string end python"><span>&#39;</span></span></span></span><span class="punctuation separator valuepair dictionary python"><span>:</span></span><span>&nbsp;</span><span class="meta structure dictionary value python"><span class="meta function-call python"><span>LinkedList</span><span class="punctuation definition arguments begin python"><span>(</span></span><span class="meta function-call arguments python"><span>request</span><span>.</span><span>param</span></span><span class="punctuation definition arguments end python"><span>)</span></span></span></span><span class="punctuation separator dictionary python"><span>,</span></span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span class="meta structure dictionary python"><span class="meta structure dictionary key python"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single single-line python"><span class="punctuation definition string begin python"><span>&#39;</span></span><span>pop_value</span><span class="punctuation definition string end python"><span>&#39;</span></span></span></span><span class="punctuation separator valuepair dictionary python"><span>:</span></span><span>&nbsp;</span><span class="meta structure dictionary value python"><span class="meta item-access python"><span>request</span><span>.</span><span>param</span><span class="punctuation definition arguments begin python"><span>[</span></span><span class="meta item-access arguments python"><span class="keyword operator arithmetic python"><span>-</span></span><span class="constant numeric integer decimal python"><span>1</span></span></span><span class="punctuation definition arguments end python"><span>]</span></span></span></span><span class="punctuation separator dictionary python"><span>,</span></span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span class="meta structure dictionary python"><span class="meta structure dictionary key python"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single single-line python"><span class="punctuation definition string begin python"><span>&#39;</span></span><span>push_value</span><span class="punctuation definition string end python"><span>&#39;</span></span></span></span><span class="punctuation separator valuepair dictionary python"><span>:</span></span><span>&nbsp;</span><span class="meta structure dictionary value python"><span class="constant numeric integer decimal python"><span>0</span></span></span></span></span></div><div class="line"><span class="source python"><span class="meta structure dictionary python"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="punctuation definition dictionary end python"><span>}</span></span></span></span></div><div class="line"><span class="source python"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword control statement python"><span>return</span></span><span>&nbsp;</span><span>result</span></span></div><div class="line"><span class="source python"><span>&nbsp;</span></span></div><div class="line"><span class="source python"><span>______________________</span></span></div><div class="line"><span class="source python"><span class="comment line number-sign python"><span class="punctuation definition comment python"><span>#</span></span><span>test_linked_list.py</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source python"><span>&nbsp;</span></span></div><div class="line"><span class="source python"><span class="meta function python"><span class="storage type function python"><span>def</span></span><span>&nbsp;</span><span class="entity name function python"><span>test_pop_value</span></span><span class="punctuation definition parameters begin python"><span>(</span></span><span class="meta function parameters python"><span class="variable parameter function python"><span>all_fix</span></span></span><span class="punctuation definition parameters end python"><span>)</span></span><span class="punctuation section function begin python"><span>:</span></span></span></span></div><div class="line"><span class="source python"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword other python"><span>assert</span></span><span>&nbsp;</span><span class="meta item-access python"><span>all_fix</span><span class="punctuation definition arguments begin python"><span>[</span></span><span class="meta item-access arguments python"><span class="string quoted single single-line python"><span class="punctuation definition string begin python"><span>&#39;</span></span><span>instance</span><span class="punctuation definition string end python"><span>&#39;</span></span></span></span><span class="punctuation definition arguments end python"><span>]</span></span></span><span>.</span><span class="meta function-call python"><span>p</span><span>op</span><span class="punctuation definition arguments begin python"><span>(</span></span><span class="punctuation definition arguments end python"><span>)</span></span></span><span>&nbsp;</span><span class="keyword operator comparison python"><span>==</span></span><span>&nbsp;</span><span class="meta item-access python"><span>all_fix</span><span class="punctuation definition arguments begin python"><span>[</span></span><span class="meta item-access arguments python"><span class="string quoted single single-line python"><span class="punctuation definition string begin python"><span>&#39;</span></span><span>pop_value</span><span class="punctuation definition string end python"><span>&#39;</span></span></span></span><span class="punctuation definition arguments end python"><span>]</span></span></span></span></div><div class="line"><span class="source python"><span>&nbsp;</span></span></div><div class="line"><span class="source python"><span class="meta function python"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="storage type function python"><span>def</span></span><span>&nbsp;</span><span class="entity name function python"><span>test_push_value</span></span><span class="punctuation definition parameters begin python"><span>(</span></span><span class="meta function parameters python"><span class="variable parameter function python"><span>all_fix</span></span></span><span class="punctuation definition parameters end python"><span>)</span></span><span class="punctuation section function begin python"><span>:</span></span></span></span></div><div class="line"><span class="source python"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>el</span><span>&nbsp;</span><span class="keyword operator assignment python"><span>=</span></span><span>&nbsp;</span><span class="meta item-access python"><span>all_fix</span><span class="punctuation definition arguments begin python"><span>[</span></span><span class="meta item-access arguments python"><span class="string quoted single single-line python"><span class="punctuation definition string begin python"><span>&#39;</span></span><span>instance</span><span class="punctuation definition string end python"><span>&#39;</span></span></span></span><span class="punctuation definition arguments end python"><span>]</span></span></span></span></div><div class="line"><span class="source python"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta function-call python"><span>el</span><span>.</span><span>push</span><span class="punctuation definition arguments begin python"><span>(</span></span><span class="meta function-call arguments python"><span class="meta item-access python"><span>all_fix</span><span class="punctuation definition arguments begin python"><span>[</span></span><span class="meta item-access arguments python"><span class="string quoted single single-line python"><span class="punctuation definition string begin python"><span>&#39;</span></span><span>push_value</span><span class="punctuation definition string end python"><span>&#39;</span></span></span></span><span class="punctuation definition arguments end python"><span>]</span></span></span></span><span class="punctuation definition arguments end python"><span>)</span></span></span></span></div><div class="line"><span class="source python"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword other python"><span>assert</span></span><span>&nbsp;</span><span>el</span><span>.</span><span>head</span><span>.</span><span>data</span><span>&nbsp;</span><span class="keyword operator comparison python"><span>==</span></span><span>&nbsp;</span><span class="meta item-access python"><span>all_fix</span><span class="punctuation definition arguments begin python"><span>[</span></span><span class="meta item-access arguments python"><span class="string quoted single single-line python"><span class="punctuation definition string begin python"><span>&#39;</span></span><span>push_value</span><span class="punctuation definition string end python"><span>&#39;</span></span></span></span><span class="punctuation definition arguments end python"><span>]</span></span></span></span></div></pre></body>
+  </html>
+
+    </main>
+    <footer>
+      <section>
+
+      </section>
+    </footer>
+  </body>
+</html>
