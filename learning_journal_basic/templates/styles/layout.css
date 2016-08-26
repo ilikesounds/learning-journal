@@ -1,0 +1,45 @@
+.template {
+  display: none;
+}
+
+@media only screen and (min-width: 641px) {
+  #menu-collapse {
+    display: none;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    border: .0125em solid #808080;
+    box-sizing: border-box;
+  }
+
+  .nav-item {
+    display: flex;
+    flex-direction: row;
+    flex-basis: auto;
+    height: 1.5em;
+    margin: 0 auto;
+    padding: .5em;
+    text-decoration: none;
+    font-family: "Comfortaa", sans;
+  }
+
+  .nav-item-1 {
+    display: inline-flex;
+    font-size: 1.25em;
+    margin: .125em;
+    vertical-align: middle;
+  }
+
+  .nav-item-2 {
+    display: inline-flex;
+    font-size: 1.25em;
+    vertical-align: middle;
+  }
+
+  .article-byline-title {
+    font-size: 4em;
+  }
+
+}
