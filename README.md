@@ -1,6 +1,6 @@
 # Learning Journal assignment for CF SEAPY401.
 
-### The URL for this deployment is []
+### The URL for this deployment is (https://aqueous-lowlands-12022.herokuapp.com/)[https://aqueous-lowlands-12022.herokuapp.com/]
 
 #### Routes
 - There are 4 routes currently active in this project.
