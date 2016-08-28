@@ -1,0 +1,11 @@
+{% extends 'index.jinja2' %}
+{% block body %}
+<form action="" id='new-article-entry'>
+    <fieldset>
+      <legend>Enter in a new article</legend>
+      <input type="text" name="title" placeholder="Article Title" id='title' required>
+      <input type="text" name="body" placeholder="Article Body" id='body' required>
+      <input type="submit" name="Submit" value="Submit" id='sub'>
+    </fieldset>
+  </form>
+{% endblock %}

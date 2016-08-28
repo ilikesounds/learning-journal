@@ -1,0 +1,9 @@
+{% extends 'index.jinja2' %}
+{% block body %}
+  <h1>{{ title }}</h1>
+  <hr />
+  <p> Created <strong>{{ creation_date }}</strong></p>
+  <hr />
+  <p>{{ body }}</p>
+  <a class="icon-books nav-item-1" data-tabs="edit_article" href="{{ request.route_url('edit_view', id=id) }}"></a><a class="nav-item-2" data-tabs="educationTab" href="{{ request.route_url('edit_view', id=id) }}">Edit</a>
+{% endblock %}
