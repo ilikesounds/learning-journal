@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{ request.static_path('learning_journal_basic:static/styles/normalize.css') }}" media="all and (max-width: 1080px)">
+    <link rel="stylesheet" href="{{ request.static_path('learning_journal_basic:static/styles/base.css') }}" charset="utf-8">
+    <link rel="stylesheet" href="{{ request.static_path('learning_journal_basic:static/styles/layout.css') }}" charset="utf-8">
+    <link rel="stylesheet" href="{{ request.static_path('learning_journal_basic:static/styles/modules.css') }}" charset="utf-8">
+    <link rel="stylesheet" href="{{ request.static_path('learning_journal_basic:static/styles/state.css') }}" charset="utf-8">
+    <link rel="stylesheet" href="{{ request.static_path('learning_journal_basic:static/styles/theme.css') }}" charset="utf-8">
+    <title>Learning Journal: Jeff Torres</title>
+  </head>
+  <body>
+    {% block nav %}
+    {% endblock %}
+    <main>
+      {% block body %}
+      {% endblock %}
+    </main>
+    <footer>
+      <section>
+      </section>
+    </footer>
+  </body>
+</html>
