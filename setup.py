@@ -12,6 +12,10 @@ requires = [
     'pyramid',
     'pyramid_jinja2',
     'pyramid_debugtoolbar',
+    'pyramid_tm',
+    'SQLAlchemy',
+    'transaction',
+    'zope.sqlalchemy',
     'waitress',
     ]
 
@@ -35,7 +39,7 @@ setup(name='learning_journal_basic',
       author='Jeffrey Torres',
       author_email='jeffrey.n.torres@gmail.com',
       url='https://github.com/ilikesounds/learning-journal',
-      keywords='web pyramid pylons',
+      keywords='web pyramid wsgi bfg pylons',
       packages=find_packages(),
       include_package_data=True,
       zip_safe=False,
@@ -46,5 +50,7 @@ setup(name='learning_journal_basic',
       entry_points="""\
       [paste.app_factory]
       main = learning_journal_basic:main
+      [console_scripts]
+      initialize_learning_journal_basic_db = learning_journal_basic.scripts.initializedb:main
       """,
       )
