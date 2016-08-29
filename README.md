@@ -18,19 +18,24 @@ Name                                            Stmts   Miss  Cover
 -------------------------------------------------------------------
 learning_journal_basic/__init__.py                  8      0   100%
 learning_journal_basic/routes.py                    6      0   100%
-learning_journal_basic/tests.py                    18      1    94%
-learning_journal_basic/views.py                    14      5    64%
+learning_journal_basic/tests.py                    30      0   100%
+learning_journal_basic/views.py                    14      0   100%
 -------------------------------------------------------------------
-TOTAL                                              46      6    87%
+TOTAL                                              58      0   100%
 
+5 passed in 0.59 seconds
 
 ----------- coverage: platform linux, python 3.5.2-final-0 -----------
 Name                                            Stmts   Miss  Cover
 -------------------------------------------------------------------
 learning_journal_basic/__init__.py                  8      0   100%
 learning_journal_basic/routes.py                    6      0   100%
-learning_journal_basic/tests.py                    18      1    94%
-learning_journal_basic/views.py                    14      5    64%
+learning_journal_basic/tests.py                    30      0   100%
+learning_journal_basic/views.py                    14      0   100%
 -------------------------------------------------------------------
-TOTAL                                              46      6    87%
+TOTAL                                              58      0   100%
+
+5 passed in 3.36 seconds
 ```
+
+*thanks to [Victor](https://github.com/vbenavente/learning-journal) for help with tests*
