@@ -14,5 +14,13 @@ class MyModel(Base):
     name = Column(Text)
     value = Column(Integer)
 
+Index('my_model', MyModel.name, unique=True, mysql_length=255)
 
-Index('my_index', MyModel.name, unique=True, mysql_length=255)
+# class PLJdb(Base):
+#     __tablename__ = 'learning_journal_basic'
+#     id = Column(Integer, primary_key=True)
+#     title = Column(Text)
+#     date_created = Column(Text)
+#     body = Column(Text)
+#
+# Index('ljb_index', PLJdb.name, unique=True, mysql_length=255)
