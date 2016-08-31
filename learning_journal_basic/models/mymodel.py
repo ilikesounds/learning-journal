@@ -2,25 +2,18 @@ from sqlalchemy import (
     Column,
     Index,
     Integer,
-    Text,
+    UnicodeText,
+    DateTime
 )
 
 from .meta import Base
 
 
-class MyModel(Base):
-    __tablename__ = 'models'
+class PLJ_Article(Base):
+    __tablename__ = 'entries'
     id = Column(Integer, primary_key=True)
-    name = Column(Text)
-    value = Column(Integer)
+    title = Column(UnicodeText)
+    date_created = Column(DateTime)
+    body = Column(UnicodeText)
 
-Index('my_model', MyModel.name, unique=True, mysql_length=255)
-
-# class PLJdb(Base):
-#     __tablename__ = 'learning_journal_basic'
-#     id = Column(Integer, primary_key=True)
-#     title = Column(Text)
-#     date_created = Column(Text)
-#     body = Column(Text)
-#
-# Index('ljb_index', PLJdb.name, unique=True, mysql_length=255)
+Index('ljb_index', PLJ_Article.title, unique=True, mysql_length=255)

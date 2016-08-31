@@ -5,13 +5,6 @@ Views controller for Pyramid Learning Journal application
 from pyramid.view import view_config
 
 
-ENTRIES = [
-    {'title': 'LJ - Test 1', 'creation_date': '08.22.16', 'id': 1, 'body': 'This is text for test entry 1'},
-    {'title': 'LJ - Test 2', 'creation_date': '08.23.16', 'id': 2, 'body': 'This is text for test entry 2'},
-    {'title': 'LJ - Test 3', 'creation_date': '08.24.16', 'id': 3, 'body': 'This is text for test entry 3'},
-]
-
-
 @view_config(route_name='home', renderer='templates/list.jinja2')
 def list_view(request):
     """

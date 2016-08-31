@@ -1,6 +1,7 @@
 import os
 import sys
 import transaction
+from datetime import datetime
 
 from pyramid.paster import (
     get_appsettings,
@@ -15,7 +16,9 @@ from ..models import (
     get_session_factory,
     get_tm_session,
     )
-from ..models import MyModel
+
+from ..models import PLJ_Article
+from ..models.entry import ENTRIES
 
 
 def usage(argv):
@@ -36,10 +39,13 @@ def main(argv=sys.argv):
     engine = get_engine(settings)
     Base.metadata.create_all(engine)
 
-    session_factory = get_session_factory(engine)
-
-    with transaction.manager:
-        dbsession = get_tm_session(session_factory, transaction.manager)
-
-        model = MyModel(name='one', value=1)
-        dbsession.add(model)
+    # session_factory = get_session_factory(engine)
+    # 
+    # with transaction.manager:
+    #     dbsession = get_tm_session(session_factory, transaction.manager)
+    #     for entry in ENTRIES:
+    #         article = PLJ_Article(title=entry['title'],
+    #                               date_created=datetime.strptime(entry['creation_date'], '%Y-%m-%d'),
+    #                               body=entry['body'])
+    #         dbsession.add(article)
+    #     # model = (name='one', value=1)
