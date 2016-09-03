@@ -10,6 +10,7 @@ from .meta import Base
 
 
 class PLJ_Article(Base):
+    import pdb; pdb.set_trace
     __tablename__ = 'entries'
     id = Column(Integer, primary_key=True)
     title = Column(UnicodeText)
