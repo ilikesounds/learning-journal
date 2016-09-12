@@ -1,10 +1,11 @@
 {% extends 'index.jinja2' %}
 {% block body %}
-  <form action="" id='edit-article'>
+  <form action="{{ request.route_url('edit_view', id=article.id) }}" method="POST" id="edit-article">
     <fieldset>
       <legend>Edit an article</legend>
-      <input type="text" name="title" placeholder="Article Title" id='title' required>
-      <input type="text" name="body" placeholder="Article Body" id='body' required>
+      <input type="text" name="title" placeholder="Article Title" id='title' value="{{ article.title }}" required>
+      <input type="text" name="body" placeholder="Article Body" id='body' value="{{ article.body }}" required>
+      <input type="hidden" name="id" value="{{ article.id }}">
       <input type="submit" name="Submit" value="Submit" id='sub'>
     </fieldset>
   </form>
