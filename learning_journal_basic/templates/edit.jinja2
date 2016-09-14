@@ -4,9 +4,9 @@
     <fieldset>
       <legend>Edit an article</legend>
       <input type="text" name="title" placeholder="Article Title" id='title' value="{{ article.title }}" required>
-      <input type="text" name="body" placeholder="Article Body" id='body' value="{{ article.body }}" required>
+      <input type="textarea" name="body" placeholder="Article Body" id='body' value="{{ article.body }}" required>
       <input type="hidden" name="id" value="{{ article.id }}">
-      <input type="submit" name="Submit" value="Submit" id='sub'>
+      <input type="submit" name="submit" value="Submit" id='sub'>
     </fieldset>
   </form>
 {% endblock %}

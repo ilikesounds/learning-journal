@@ -3,8 +3,7 @@ Views controller for Pyramid Learning Journal application
 """
 
 from pyramid.view import view_config
-from pyramid.httpexceptions import HTTPNotFound
-from pyramid.httpexceptions import HTTPFound
+from pyramid.httpexceptions import HTTPNotFound, HTTPFound
 import pytz
 from datetime import datetime
 
@@ -15,9 +14,9 @@ def list_view(request):
     """
     This will return the index page for the Learning Journal
     """
-    articles = request.dbsession.query(PLJ_Article).order_by(PLJ_Article.date_created.desc())
-    article = articles.all()
-    return {'articles': article}
+    query = request.dbsession.query(PLJ_Article).order_by(PLJ_Article.date_created.desc())
+    articles = query.all()
+    return {'articles': articles}
 
 
 @view_config(route_name='detail_view', renderer='templates/detail.jinja2')
@@ -60,7 +59,7 @@ def edit_view(request):
     if request.method == "POST":
         new_title = request.POST["title"]
         new_body = request.POST["body"]
-        time = datetime.now(pytz.utc)
+        time = request.dbsession.query(PLJ_Article).get(request.matchdict['id']).date_created
         new_model = PLJ_Article(title=new_title, body=new_body, date_created=time)
 
         request.dbsession.add(new_model)

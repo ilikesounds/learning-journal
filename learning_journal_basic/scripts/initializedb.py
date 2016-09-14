@@ -49,4 +49,3 @@ def main(argv=sys.argv):
                                   date_created=datetime.strptime(entry['creation_date'], '%Y-%m-%d'),
                                   body=entry['body'])
             dbsession.add(article)
-        # model = (name='one', value=1)

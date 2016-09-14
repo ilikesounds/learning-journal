@@ -1,3 +1,7 @@
+"""
+This module provides the Article model for the Pyramid Learning Journal project
+"""
+
 from sqlalchemy import (
     Column,
     Index,
@@ -10,7 +14,10 @@ from .meta import Base
 
 
 class PLJ_Article(Base):
-    import pdb; pdb.set_trace
+    """
+    This is the article model for the pyramid learning journal project.
+    It does not require, but should have a title, date_created and body.
+    """
     __tablename__ = 'entries'
     id = Column(Integer, primary_key=True)
     title = Column(UnicodeText)
