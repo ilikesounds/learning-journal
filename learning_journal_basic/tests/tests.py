@@ -1,47 +1,136 @@
 import pytest
-
+import pytz
+from datetime import datetime
+import transaction
 from pyramid import testing
+from ..models import (
+    get_engine,
+    get_session_factory,
+    get_tm_session
+)
+from ..models.mymodel import PLJ_Article
+from ..models.meta import Base
 
 
-def test_entry_view():
-    from ..views.default import entry_view
-    request = testing.DummyRequest()
-    info = entry_view(request)
-    assert 'entries' in info
+# ---------- Fixtures for tests ---------------
+
+@pytest.fixture(scope='session')
+def db_engine(request):
+    config = testing.setUp(settings={
+        'sqlalchemy.url': 'sqlite:///learning_journal_basic/learning_journal_basic.sqlite'
+    })
+    config.include('..models')
+    settings = config.get_settings()
+    engine = get_engine(settings)
+    Base.metadata.create_all(engine)
+
+    def teardown():
+        testing.tearDown()
+        transaction.abort()
+        Base.metadata.drop_all(engine)
+
+    request.addfinalizer(teardown)
+    return engine
 
 
-def test_detail_view():
+@pytest.fixture(scope='function')
+def test_session(db_engine, request):
+    session_factory = get_session_factory(db_engine)
+    dbsession = get_tm_session(session_factory, transaction.manager)
+
+    def teardown():
+        transaction.abort()
+
+    request.addfinalizer(teardown)
+    return dbsession
+
+
+@pytest.fixture(scope='function')
+def dummy_http_request(test_session):
+    """
+    This is a generic dummy request generator
+    """
+    test_request = testing.DummyRequest()
+    test_request.dbsession = test_session
+    return test_request
+
+# ------- View tests --------------
+
+
+# ------- DB tests --------------
+
+def test_model_added(test_session):
+    """Test the creation of the new model."""
+    assert len(test_session.query(PLJ_Article).all()) == 0
+    time = datetime.now(pytz.utc)
+    model = PLJ_Article(title="entry",
+                        body="body",
+                        date_created=time
+                        )
+    test_session.add(model)
+    test_session.flush()
+    assert len(test_session.query(PLJ_Article).all()) == 1
+
+# ----------- View tests ------------
+
+
+def test_get_list_view_title(test_session):
+    """Test whether list_view returns correct title from DB"""
+    from ..views.default import list_view
+    time = datetime.now(pytz.utc)
+    model = PLJ_Article(title="test_title",
+                        body="test_body",
+                        date_created=time
+                        )
+    test_session.add(model)
+    test_session.flush()
+    result = list_view(dummy_http_request(test_session))
+    assert result['articles'][0].title == 'test_title'
+
+
+def test_get_list_view_body(test_session):
+    """Test whether list_view returns correct body from DB"""
+    from ..views.default import list_view
+    time = datetime.now(pytz.utc)
+    model = PLJ_Article(title="test_title",
+                        body="test_body",
+                        date_created=time
+                        )
+    test_session.add(model)
+    test_session.flush()
+    result = list_view(dummy_http_request(test_session))
+    assert result['articles'][0].body == 'test_body'
+
+
+def test_get_detail_view(test_session):
+    """Test detail_view is correctly returned"""
     from ..views.default import detail_view
-    request = testing.DummyRequest()
-    request.matchdict = {'id': '1'}
-    info = detail_view(request)
-    assert 'body' in info
+    time = datetime.now(pytz.utc)
+    model = PLJ_Article(title="test_title",
+                        body="test_body",
+                        date_created=time
+                        )
+    test_session.add(model)
+    test_session.flush()
+    request = dummy_http_request(test_session)
+    request.matchdict['id'] = 1
+    result = detail_view(request)
+    assert result['article'].title == 'test_title'
 
 
-def test_edit_view():
+def test_get_edit_view(test_session):
+    """
+    Test edit_view is correctly returned
+    """
     from ..views.default import edit_view
-    request = testing.DummyRequest()
-    request.matchdict = {'id': '1'}
-    info = edit_view(request)
-    assert 'body' in info
-
-# ------- Functional Tests -------
-
-
-@pytest.fixture()
-def testapp():
-    from learning_journal_basic import main
-    settings = {'sqlalchemy.url': 'sqlite db path'}
-    app = main({}, **settings)
-    from webtest import TestApp
-    return TestApp(app)
-
-
-def test_layout_root(testapp):
-    response = testapp.get('/', status=200)
-    assert b'jeff torres' in response.body
-
-
-def test_root_contents(testapp):
-    response = testapp.get('/', status=200)
-    assert b'<article>' in response.body
+    time = datetime.now(pytz.utc)
+    model = PLJ_Article(title="test_title",
+                        body="test_body",
+                        date_created=time
+                        )
+    test_session.add(model)
+    test_session.flush()
+    request = dummy_http_request(test_session)
+    request.matchdict['id'] = 1
+    result = edit_view(request)
+    assert result['article'].title == 'test_title'
