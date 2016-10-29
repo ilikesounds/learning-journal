@@ -1,12 +1,12 @@
 {% extends "index.jinja2" %}
 {% block body %}
-  {% if entries %}
-    {% for entry in entries %}
+  {% if articles %}
+    {% for article in articles %}
       <article>
-        <h2><a href="{{ request.route_url('detail_view', id=entry.id) }}">{{ entry.title }}</a></h2>
+        <h2><a href="{{ request.route_url('detail_view', id=article.id) }}">{{ article.title }}</a></h2>
         <hr />
-        <p>Created <strong>{{ entry.creation_date }}</strong></p>
-      </article>
+        <p>Created <strong>{{ article.date_created }}</strong></p>
+      </article> -->
     {% endfor %}
   {% else %}
     <p>This journal is empty</p>
