@@ -16,9 +16,8 @@ class Root(object):
 
 def verify_user(username, password):
     is_user_authenticated = False
-    env_username = os.environ.get('PLJ_USER', '')
-    env_password = os.environ.get('PLJ_PASS', '')
-    print('env user/pass', env_username, env_password)
+    env_username = os.environ.get('PLJ_USER')
+    env_password = os.environ.get('PLJ_PASS')
     if env_username and env_password:
         if username == env_username:
             try:

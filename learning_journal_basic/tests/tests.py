@@ -12,6 +12,9 @@ from ..models.mymodel import PLJ_Article
 from ..models.meta import Base
 import os
 
+from ..security import verify_user
+from passlib.apps import custom_app_context
+
 
 # ---------- Fixtures for tests ---------------
 
@@ -26,8 +29,8 @@ def db_engine(request):
     Base.metadata.create_all(engine)
 
     def teardown():
-        testing.tearDown()
         transaction.abort()
+        testing.tearDown()
         Base.metadata.drop_all(engine)
 
     request.addfinalizer(teardown)
@@ -155,3 +158,13 @@ def test_entry_view_error_message(test_session):
     from ..views.default import entry_view
     result = entry_view(dummy_http_request_post('', '', test_session))
     assert result['error_message'] == '''You must enter at least one character in the Title and Body fields.'''
+
+
+# ------------- Security Tests ----------------
+
+
+def test_verify_user():
+    """
+    Confirms that verify user returns a True value when user and pass match
+    """
+    assert not verify_user('j', 'ThisPasswordIsSecret')
