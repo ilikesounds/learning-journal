@@ -3,12 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="{{ request.static_path('learning_journal_basic:static/styles/normalize.css') }}" media="all and (max-width: 1080px)">
-    <link rel="stylesheet" href="{{ request.static_path('learning_journal_basic:static/styles/base.css') }}" charset="utf-8">
-    <link rel="stylesheet" href="{{ request.static_path('learning_journal_basic:static/styles/layout.css') }}" charset="utf-8">
-    <link rel="stylesheet" href="{{ request.static_path('learning_journal_basic:static/styles/modules.css') }}" charset="utf-8">
-    <link rel="stylesheet" href="{{ request.static_path('learning_journal_basic:static/styles/state.css') }}" charset="utf-8">
-    <link rel="stylesheet" href="{{ request.static_path('learning_journal_basic:static/styles/theme.css') }}" charset="utf-8">
     <title>Learning Journal: Jeff Torres</title>
   </head>
   <header>
@@ -27,10 +21,6 @@
             <a class="icon-stack nav-item-1" data-tabs="new_article" href="{{ request.route_url('entry_view') }}"></a>
             <a class="nav-item-2" data-tabs="projectTab" href="{{ request.route_url('entry_view') }}">New Articles</a>
           </section>
-          <section class="nav-item">
-            <a class="icon-user-tie nav-item-1" data-tabs="aboutMe" href="#"></a>
-            <a class="nav-item-2" data-tabs="aboutMeTab" href="#">About Me</a>
-        </section>
       </nav>
     </section>
   </header>
