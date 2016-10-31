@@ -10,6 +10,7 @@ from ..models import (
 )
 from ..models.mymodel import PLJ_Article
 from ..models.meta import Base
+import os
 
 
 # ---------- Fixtures for tests ---------------
@@ -17,7 +18,7 @@ from ..models.meta import Base
 @pytest.fixture(scope='session')
 def db_engine(request):
     config = testing.setUp(settings={
-        'sqlalchemy.url': 'sqlite:///learning_journal_basic/learning_journal_basic.sqlite'
+        'sqlalchemy.url': 'sqlite:///:memory:'
     })
     config.include('..models')
     settings = config.get_settings()
@@ -48,16 +49,27 @@ def test_session(db_engine, request):
 @pytest.fixture(scope='function')
 def dummy_http_request(test_session):
     """
-    This is a generic dummy request generator
+    This is a generic dummy GET request generator
     """
     test_request = testing.DummyRequest()
     test_request.dbsession = test_session
     return test_request
 
-# ------- View tests --------------
 
+def dummy_http_request_post(title, body, new_session):
+    """
+    This is a generic dummy POST request generator
+    """
+    test_request = testing.DummyRequest()
+    test_request.dbsession = new_session
+    test_request.method = 'POST'
+    test_request.POST['title'] = title
+    test_request.POST['body'] = body
+    test_request.POST['date_created'] = datetime.now(pytz.utc)
+    return test_request
 
 # ------- DB tests --------------
+
 
 def test_model_added(test_session):
     """Test the creation of the new model."""
@@ -125,7 +137,7 @@ def test_get_edit_view(test_session):
     from ..views.default import edit_view
     time = datetime.now(pytz.utc)
     model = PLJ_Article(title="test_title",
-                        body="test_body",
+                        body="",
                         date_created=time
                         )
     test_session.add(model)
@@ -134,3 +146,13 @@ def test_get_edit_view(test_session):
     request.matchdict['id'] = 1
     result = edit_view(request)
     assert result['article'].title == 'test_title'
+
+
+def test_entry_view_error_message(test_session):
+    """
+    Test that an error message is returned on no characters in title or body
+    """
+    from ..views.default import entry_view
+    result = entry_view(dummy_http_request_post('', '', test_session))
+    import pdb; pdb.set_trace()
+    assert result['error_message'] == '''You must enter at least one character in the Title and Body fields.'''
