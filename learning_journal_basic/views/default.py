@@ -91,7 +91,6 @@ def edit_view(request):
                                 body=new_body,
                                 date_created=time
                                 )
-
         request.dbsession.add(new_model)
 
         return HTTPFound(request.route_url("home"))

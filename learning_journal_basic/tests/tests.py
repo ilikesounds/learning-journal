@@ -154,5 +154,4 @@ def test_entry_view_error_message(test_session):
     """
     from ..views.default import entry_view
     result = entry_view(dummy_http_request_post('', '', test_session))
-    import pdb; pdb.set_trace()
     assert result['error_message'] == '''You must enter at least one character in the Title and Body fields.'''
