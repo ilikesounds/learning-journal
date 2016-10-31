@@ -46,23 +46,33 @@ def detail_view(request):
 def entry_view(request):
     """
     This will return the article entry page for new article in the Learning
-    Journal
+    Journal and return an error message if input requirements are not met.
     """
+    entry = {}
+    error_message = 'empty form'
+    if request.method == 'GET':
+        entry['title'] = ''
+        entry['body'] = ''
+        return {'entry': entry, 'error_message': error_message}
+
     if request.method == "POST":
-        new_title = request.POST["title"]
-        new_body = request.POST["body"]
-        time = datetime.now(pytz.utc)
-        new_model = PLJ_Article(
-            title=new_title,
-            body=new_body,
-            date_created=time
-            )
+        if request.POST['title'] != '' and request.POST['body'] != '':
+            new_title = request.POST["title"]
+            new_body = request.POST["body"]
+            time = datetime.now(pytz.utc)
+            new_model = PLJ_Article(
+                title=new_title,
+                body=new_body,
+                date_created=time
+                )
+            request.dbsession.add(new_model)
 
-        request.dbsession.add(new_model)
-
-        return HTTPFound(request.route_url("home"))
-
-    return {}
+            return HTTPFound(request.route_url("home"))
+        else:
+            entry['title'] = request.POST['title']
+            entry['body'] = request.POST['body']
+            error_message = """You must enter at least one character in the Title and Body fields."""
+            return {'entry': entry, 'error_message': error_message}
 
 
 @view_config(route_name='edit_view', renderer='templates/edit.jinja2')
@@ -81,7 +91,6 @@ def edit_view(request):
                                 body=new_body,
                                 date_created=time
                                 )
-
         request.dbsession.add(new_model)
 
         return HTTPFound(request.route_url("home"))
