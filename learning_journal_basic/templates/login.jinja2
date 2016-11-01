@@ -1,0 +1,14 @@
+{% extends "index.jinja2" %}
+{% block body %}
+
+<form action="{{ request.route_url('login')}}" method="POST">
+  <fieldset>
+    <legend>Login: User and Password Required</legend>
+    <input type="text" name="username" required>
+    <input type="password" name="password" required>
+    <input type="submit" name="login" value="Login">
+    <h4 class="error-msg">{{ msg }}</h4>
+  </fieldset>
+</form>
+
+{% endblock %}
