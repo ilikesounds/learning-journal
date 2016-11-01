@@ -176,7 +176,7 @@ SECRET_ROUTES = [
     ('/journal/list'),
     ('/journal/1'),
     ('/journal/new_entry'),
-    ('/journal/1/edit_view'),
+    ('/journal/edit_view/1'),
     ('/logout'),
 ]
 
