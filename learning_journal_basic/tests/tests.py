@@ -167,4 +167,11 @@ def test_verify_user():
     """
     Confirms that verify user returns a True value when user and pass match
     """
-    assert not verify_user('j', 'ThisPasswordIsSecret')
+    assert verify_user('j', 'ThisPasswordIsSecret')
+
+
+def test_verify_user_fails_with_no_password():
+    """
+    Confirms that verify user returns a True value when user and pass match
+    """
+    assert not verify_user('j', '')
