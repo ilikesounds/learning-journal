@@ -8,11 +8,14 @@ import pytz
 from datetime import datetime
 from sqlalchemy.exc import DBAPIError
 from pyramid.response import Response
-
 from ..models import PLJ_Article
+from .security import verify_user
+from pyramid.security import forget, remember
 
 
-@view_config(route_name='home', renderer='../templates/list.jinja2')
+@view_config(route_name='list_view',
+             renderer='../templates/list.jinja2',
+             permission='secret')
 def list_view(request):
     """
     This will return the index page for the Learning Journal
@@ -24,7 +27,9 @@ def list_view(request):
     return {'articles': articles}
 
 
-@view_config(route_name='detail_view', renderer='templates/detail.jinja2')
+@view_config(route_name='detail_view',
+             renderer='templates/detail.jinja2',
+             permission='secret')
 def detail_view(request):
     """
     This will return the detail page for an article in the Learning Journal
@@ -42,7 +47,9 @@ def detail_view(request):
     return {'article': article}
 
 
-@view_config(route_name='entry_view', renderer='../templates/entry.jinja2')
+@view_config(route_name='entry_view',
+             renderer='../templates/entry.jinja2',
+             permission='secret')
 def entry_view(request):
     """
     This will return the article entry page for new article in the Learning
@@ -75,7 +82,9 @@ def entry_view(request):
             return {'entry': entry, 'error_message': error_message}
 
 
-@view_config(route_name='edit_view', renderer='templates/edit.jinja2')
+@view_config(route_name='edit_view',
+             renderer='templates/edit.jinja2',
+             permission='secret')
 def edit_view(request):
     """
     This will return the article edit page for an article in the Learning
@@ -104,6 +113,29 @@ def edit_view(request):
                         status=500
                         )
     return {'article': article}
+
+
+@view_config(route_name='home')
+def home(request):
+    if request.authenticated_userid:
+        return HTTPFound(request.route_url('home'))
+    else:
+        return HTTPFound(request.route_url('login'))
+
+
+@view_config(route_name='login', renderer='templates/login.jinja2')
+def login(request):
+    message = ''
+    if request.method == 'POST':
+        username = request.params.get('username', '')
+        password = request.params.get('password', '')
+        if verify_user(username, password):
+            headers = remember(request, username)
+            return HTTPFound(request.route_url('home'), headers=headers)
+        else:
+            message = "I'm sorry your credentials do not match"
+    return {'message': message}
+
 
 db_err_msg = """\
 Pyramid is having a problem using your SQL database.  The problem
