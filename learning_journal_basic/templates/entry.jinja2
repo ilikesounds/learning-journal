@@ -1,0 +1,12 @@
+{% extends 'index.jinja2' %}
+{% block body %}
+<form action="{{ request.route_url('entry_view')}}" method="POST" id="edit-article">
+  <fieldset>
+    <legend>Create a new article</legend>
+    <input type="text" name="title" placeholder="Article Title" id='title' value="" required>
+    <input type="textarea" name="body" placeholder="Article Body" id='body' value="" required>
+    <input type="submit" name="Submit" value="Submit" id='sub'>
+    <input type="hidden" name="csrf_token" value="{{ request.session.get_csrf_token() }}">
+  </fieldset>
+</form>
+{% endblock %}

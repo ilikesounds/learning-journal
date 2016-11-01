@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Learning Journal: Jeff Torres</title>
+  </head>
+  <header>
+    <section class="headline">
+      <img src="" alt="" />
+      <h1 class="main-name">jeff torres</h1>
+    </section>
+    <section class="navigation">
+      <a class="icon-menu" id="nav-menu"></a>
+      <nav class="nav-container">
+          <section class="nav-item">
+            <a href="{{ request.route_url('home') }}">Home</a>
+          </section>
+          {% block new_article %}
+          {% endblock %}
+          <section class="nav-item">
+            <a href="{{ request.route_url('login') }}">Login</a>
+          </section>
+          <section class="nav-item">
+            <a href="{{ request.route_url('logout') }}">Logout</a>
+          </section>
+      </nav>
+    </section>
+  </header>
+  <body>
+    <main>
+      {% block body %}
+      {% endblock %}
+    </main>
+    <footer>
+      <section>
+      </section>
+    </footer>
+  </body>
+</html>
