@@ -7,3 +7,9 @@
   <p>{{ article.body }}</p>
   <a class="icon-books nav-item-1" data-tabs="edit_article" href="{{ request.route_url('edit_view', id=article.id) }}"></a><a class="nav-item-2" data-tabs="educationTab" href="{{ request.route_url('edit_view', id=article.id) }}">Edit</a>
 {% endblock %}
+
+{% block new_article %}
+<section class="nav-item">
+  <a href="{{ request.route_url('entry_view') }}">New Articles</a>
+</section>
+{% endblock %}

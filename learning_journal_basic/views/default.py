@@ -9,13 +9,13 @@ from datetime import datetime
 from sqlalchemy.exc import DBAPIError
 from pyramid.response import Response
 from ..models import PLJ_Article
-from .security import verify_user
+from ..security import verify_user
 from pyramid.security import forget, remember
 
 
 @view_config(route_name='list_view',
              renderer='../templates/list.jinja2',
-             permission='secret')
+             permission='root')
 def list_view(request):
     """
     This will return the index page for the Learning Journal
@@ -29,7 +29,7 @@ def list_view(request):
 
 @view_config(route_name='detail_view',
              renderer='templates/detail.jinja2',
-             permission='secret')
+             permission='root')
 def detail_view(request):
     """
     This will return the detail page for an article in the Learning Journal
@@ -49,7 +49,7 @@ def detail_view(request):
 
 @view_config(route_name='entry_view',
              renderer='../templates/entry.jinja2',
-             permission='secret')
+             permission='root')
 def entry_view(request):
     """
     This will return the article entry page for new article in the Learning
@@ -84,7 +84,7 @@ def entry_view(request):
 
 @view_config(route_name='edit_view',
              renderer='templates/edit.jinja2',
-             permission='secret')
+             permission='root')
 def edit_view(request):
     """
     This will return the article edit page for an article in the Learning
@@ -131,11 +131,16 @@ def login(request):
         password = request.params.get('password', '')
         if verify_user(username, password):
             headers = remember(request, username)
-            return HTTPFound(request.route_url('home'), headers=headers)
+            return HTTPFound(request.route_url('list_view'), headers=headers)
         else:
-            message = "I'm sorry your credentials do not match"
+            message = "I'm sorry, but your credentials do not match."
     return {'message': message}
 
+
+@view_config(route_name='logout', permission='root')
+def logout(request):
+    headers = forget(request)
+    return HTTPFound(request.route_url('login'), headers=headers)
 
 db_err_msg = """\
 Pyramid is having a problem using your SQL database.  The problem

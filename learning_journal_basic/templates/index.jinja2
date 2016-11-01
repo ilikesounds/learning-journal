@@ -16,11 +16,13 @@
           <section class="nav-item">
             <a href="{{ request.route_url('home') }}">Home</a>
           </section>
-          <section class="nav-item">
-            <a href="{{ request.route_url('entry_view') }}">New Articles</a>
-          </section>
+          {% block new_article %}
+          {% endblock %}
           <section class="nav-item">
             <a href="{{ request.route_url('login') }}">Login</a>
+          </section>
+          <section class="nav-item">
+            <a href="{{ request.route_url('logout') }}">Logout</a>
           </section>
       </nav>
     </section>

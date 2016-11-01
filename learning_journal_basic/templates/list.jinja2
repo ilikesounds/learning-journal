@@ -12,3 +12,9 @@
     <p>This journal is empty</p>
   {% endif %}
 {% endblock %}
+
+{% block new_article %}
+<section class="nav-item">
+  <a href="{{ request.route_url('entry_view') }}">New Articles</a>
+</section>
+{% endblock %}
