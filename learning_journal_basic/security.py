@@ -52,6 +52,8 @@ def includeme(config):
     config.set_authentication_policy(authn_policy)
     config.set_default_permission('view')
     config.set_root_factory(Root)
+    set_session_factory(config)
+    config.set_default_csrf_options(require_csrf=True)
 
 
 def set_session_factory(config):
