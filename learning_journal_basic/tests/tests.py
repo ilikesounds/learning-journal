@@ -10,10 +10,7 @@ from ..models import (
 )
 from ..models.mymodel import PLJ_Article
 from ..models.meta import Base
-import os
-
 from ..security import verify_user
-from passlib.apps import custom_app_context
 from webtest import TestApp
 
 
