@@ -7,6 +7,7 @@
       <input type="textarea" name="body" placeholder="Article Body" id='body' value="{{ article.body }}" required>
       <input type="hidden" name="id" value="{{ article.id }}">
       <input type="submit" name="submit" value="Submit" id='sub'>
+       <input type="hidden" name="csrf_token" value="{{ request.session.get_csrf_token() }}">
     </fieldset>
   </form>
 {% endblock %}
