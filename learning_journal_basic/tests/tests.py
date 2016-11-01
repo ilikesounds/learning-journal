@@ -12,22 +12,35 @@ from ..models.mymodel import PLJ_Article
 from ..models.meta import Base
 import os
 
+from ..security import verify_user
+from passlib.apps import custom_app_context
+from webtest import TestApp
+
+
+DB_SETTINGS = {'sqlalchemy.url': 'sqlite:///:memory:'}
 
 # ---------- Fixtures for tests ---------------
 
+
+@pytest.fixture()
+def app():
+    from learning_journal_basic import main
+    app = main({}, **DB_SETTINGS)
+    return TestApp(app)
+
+
 @pytest.fixture(scope='session')
 def db_engine(request):
-    config = testing.setUp(settings={
-        'sqlalchemy.url': 'sqlite:///:memory:'
-    })
+    config = testing.setUp(settings=DB_SETTINGS)
+    config.testing_securitypolicy(userid='user', permissive=True)
     config.include('..models')
     settings = config.get_settings()
     engine = get_engine(settings)
     Base.metadata.create_all(engine)
 
     def teardown():
-        testing.tearDown()
         transaction.abort()
+        testing.tearDown()
         Base.metadata.drop_all(engine)
 
     request.addfinalizer(teardown)
@@ -155,3 +168,47 @@ def test_entry_view_error_message(test_session):
     from ..views.default import entry_view
     result = entry_view(dummy_http_request_post('', '', test_session))
     assert result['error_message'] == '''You must enter at least one character in the Title and Body fields.'''
+
+
+# ------------- Security Tests ----------------
+
+SECRET_ROUTES = [
+    ('/journal/list'),
+    ('/journal/1'),
+    ('/journal/new_entry'),
+    ('/journal/edit_view/1'),
+    ('/logout'),
+]
+
+
+def test_redirection_from_home_page(app):
+    '''Test home route redirection'''
+    response = app.get('/', status='3*')
+    assert response.status_code == 302
+
+
+def test_login_view_is_public(app):
+    '''Test all users can access login route'''
+    response = app.get('/login', status='2*')
+    assert response.status_code == 200
+
+
+@pytest.mark.parametrize('route', SECRET_ROUTES)
+def test_no_access_to_private_views_if_no_auth(route, app):
+    """Test all secret routes are inaccessible by unauthorized users"""
+    response = app.get(route, status='4*')
+    assert response.status_code == 403
+
+
+def test_verify_user():
+    """
+    Confirms that verify user returns a True value when user and pass match
+    """
+    assert verify_user('j', 'ThisPasswordIsSecret')
+
+
+def test_verify_user_fails_with_no_password():
+    """
+    Confirms that verify user returns a True value when user and pass match
+    """
+    assert not verify_user('j', '')

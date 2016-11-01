@@ -14,12 +14,15 @@
       <a class="icon-menu" id="nav-menu"></a>
       <nav class="nav-container">
           <section class="nav-item">
-            <a class="icon-home2 nav-item-1"  href="{{ request.route_url('home') }}"></a>
-            <a class="nav-item-2" href="{{ request.route_url('home') }}">Home</a>
+            <a href="{{ request.route_url('home') }}">Home</a>
+          </section>
+          {% block new_article %}
+          {% endblock %}
+          <section class="nav-item">
+            <a href="{{ request.route_url('login') }}">Login</a>
           </section>
           <section class="nav-item">
-            <a class="icon-stack nav-item-1" data-tabs="new_article" href="{{ request.route_url('entry_view') }}"></a>
-            <a class="nav-item-2" data-tabs="projectTab" href="{{ request.route_url('entry_view') }}">New Articles</a>
+            <a href="{{ request.route_url('logout') }}">Logout</a>
           </section>
       </nav>
     </section>
